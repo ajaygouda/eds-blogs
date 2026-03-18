@@ -162,6 +162,10 @@
   },
   {
     "id": "carousel",
+    "fields": []
+  },
+  {
+    "id": "carousel-item",
     "fields": [
       {
         "component": "text",
@@ -188,13 +192,6 @@
         "component": "text",
         "name": "ctaText",
         "label": "Button Text",
-        "valueType": "string",
-        "value": ""
-      },
-      {
-        "component": "text",
-        "name": "ctaLink",
-        "label": "Button Link",
         "valueType": "string",
         "value": ""
       }
