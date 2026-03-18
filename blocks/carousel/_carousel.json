@@ -58,12 +58,5 @@
       ]
     }
   ],
-  "filters": [
-    {
-      "id": "main",
-      "components": [
-        "carousel"
-      ]
-    }
-  ]
+  "filters": []
 }
