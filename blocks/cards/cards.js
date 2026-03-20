@@ -1,23 +1,34 @@
-import { createOptimizedPicture } from '../../scripts/aem.js';
-import { moveInstrumentation } from '../../scripts/scripts.js';
+// import { createOptimizedPicture } from '../../scripts/aem.js';
+// import { moveInstrumentation } from '../../scripts/scripts.js';
 
 export default function decorate(block) {
-  /* change to ul, li */
-  const ul = document.createElement('ul');
-  [...block.children].forEach((row) => {
-    const li = document.createElement('li');
-    moveInstrumentation(row, li);
-    while (row.firstElementChild) li.append(row.firstElementChild);
-    [...li.children].forEach((div) => {
-      if (div.children.length === 1 && div.querySelector('picture')) div.className = 'cards-card-image';
-      else div.className = 'cards-card-body';
-    });
-    ul.append(li);
+  const cardItems = [...block.children];
+  console.log('cardItems', block);
+  block.innerHTML = '';
+  const cardData = cardItems?.map((cardItem) => {
+    const cols = [cardItem?.children][0];
+    return {
+      banner: cols[0]?.querySelector('picture'),
+      title: cols[1]?.querySelector('p')?.textContent,
+      desc: cols[2]?.querySelector('p'),
+    };
   });
-  ul.querySelectorAll('picture > img').forEach((img) => {
-    const optimizedPic = createOptimizedPicture(img.src, img.alt, false, [{ width: '750' }]);
-    moveInstrumentation(img, optimizedPic.querySelector('img'));
-    img.closest('picture').replaceWith(optimizedPic);
+  cardData.forEach((item) => {
+    const card = document.createElement('div');
+    card.classList.add('card');
+    card.innerHTML = `
+        <div class="card__banner">${item?.banner?.outerHTML}</div>
+        <div class="card__body">
+          <h1 class="card__title">${item?.title}</h1>
+          <button class="card__btn">View Details</buttton>
+        </div>
+    `
+    block.appendChild(card);
   });
-  block.replaceChildren(ul);
+  // ul.querySelectorAll('picture > img').forEach((img) => {
+  //   const optimizedPic = createOptimizedPicture(img.src, img.alt, false, [{ width: '750' }]);
+  //   moveInstrumentation(img, optimizedPic.querySelector('img'));
+  //   img.closest('picture').replaceWith(optimizedPic);
+  // });
+  // block.replaceChildren(ul);
 }

@@ -14,6 +14,7 @@
       "title",
       "hero",
       "cards",
+      "blogs",
       "columns",
       "fragment",
       "carousel",
@@ -24,6 +25,12 @@
     "id": "accordion",
     "components": [
       "accordion-item"
+    ]
+  },
+  {
+    "id": "blogs",
+    "components": [
+      "blog"
     ]
   },
   {

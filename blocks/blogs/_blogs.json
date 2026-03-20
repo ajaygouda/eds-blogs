@@ -1,0 +1,106 @@
+{
+  "definitions": [
+    {
+      "title": "Blogs",
+      "id": "blogs",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block",
+            "template": {
+              "name": "Blogs",
+              "filter": "blogs"
+            }
+          }
+        }
+      }
+    },
+    {
+      "title": "Blog",
+      "id": "blog",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block/item",
+            "template": {
+              "name": "Blog",
+              "model": "blog"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "blog",
+      "fields": [
+        {
+          "component": "text",
+          "name": "title",
+          "value": "",
+          "label": "Title",
+          "valueType": "string"
+        },
+        {
+          "component": "richtext",
+          "name": "description",
+          "value": "",
+          "label": "Description",
+          "valueType": "string"
+        },
+        {
+          "component": "date",
+          "name": "postedDate",
+          "value": "",
+          "label": "Posted Date",
+          "valueType": "string"
+        },
+        {
+          "component": "text",
+          "name": "author",
+          "value": "",
+          "label": "Author",
+          "valueType": "string"
+        },
+        {
+          "component": "multiselect",
+          "name": "tags",
+          "value": "",
+          "label": "Tags",
+          "valueType": "string[]",
+          "options": [
+            {
+              "name": "Technology",
+              "value": "technology"
+            },
+            {
+              "name": "Design",
+              "value": "design"
+            },
+            {
+              "name": "Business",
+              "value": "business"
+            },
+            {
+              "name": "Marketing",
+              "value": "marketing"
+            },
+            {
+              "name": "Development",
+              "value": "development"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "filters": [
+    {
+      "id": "blogs",
+      "components": [
+        "blog"
+      ]
+    }
+  ]
+}
