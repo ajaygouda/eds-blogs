@@ -3,6 +3,7 @@
 
 export default function decorate(block) {
   const cardItems = [...block.children];
+  console.log('cardItems', block);
   block.innerHTML = '';
   const cardData = cardItems?.map((cardItem) => {
     const cols = [cardItem?.children][0];
