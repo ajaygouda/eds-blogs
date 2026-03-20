@@ -43,10 +43,15 @@
           "multi": false
         },
         {
+          "component": "text",
+          "name": "title",
+          "label": "Title",
+          "valueType": "string"
+        },
+        {
           "component": "richtext",
-          "name": "text",
-          "value": "",
-          "label": "Text",
+          "name": "description",
+          "label": "Description",
           "valueType": "string"
         }
       ]
