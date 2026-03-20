@@ -1,8 +1,8 @@
 {
   "mappings": [
-    "/content/EDS-BLOGS/:/"
+    "/content/vation-eds-blogs/:/"
   ],
   "includes": [
-    "/content/EDS-BLOGS/"
+    "/content/vation-eds-blogs/"
   ]
 }
