@@ -1,4 +1,5 @@
 export default function decorate(block) {
+  console.log(block);
   const blogsList = [...block.children];
   block.innerHTML = '';
 
@@ -8,7 +9,7 @@ export default function decorate(block) {
       banner: cols[0]?.querySelector('picture'),
       title: cols[1]?.querySelector('p')?.textContent,
       description: cols[2]?.querySelector('p')?.textContent,
-      publishedAt: '',
+      postedDate: '',
       author: cols[4]?.querySelector('p')?.textContent,
       category: cols[5]?.querySelector('p')?.textContent,
     };
@@ -23,7 +24,7 @@ export default function decorate(block) {
         <p class="blog__category">${item?.category ?? ''}</p>
         <h1 class="blog__title">${item?.title ?? ''}</h1>
         <p class="blog__author-date">
-          <span>${item?.author ?? ''}</span> | <span>${item?.publishedAt}</span>
+          <span>${item?.author ?? ''}</span> | <span>${item?.postedDate}</span>
         </p>
       </div>
     `;
