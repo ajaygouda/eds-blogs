@@ -8,7 +8,7 @@ export default function decorate(block) {
       banner: cols[0]?.querySelector('picture'),
       title: cols[1]?.querySelector('p')?.textContent,
       description: cols[2]?.querySelector('p')?.textContent,
-      publishedAt: document.querySelector('meta[property="article:published_time"]')?.content,
+      publishedAt: '',
       author: cols[4]?.querySelector('p')?.textContent,
       category: cols[5]?.querySelector('p')?.textContent,
     };
