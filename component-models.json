@@ -210,7 +210,7 @@
         "valueType": "string"
       },
       {
-        "component": "datepicker",
+        "component": "date-time",
         "name": "postedDate",
         "value": "",
         "label": "Posted Date",
