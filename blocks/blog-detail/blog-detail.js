@@ -1,12 +1,11 @@
 import formatDate from '../../scripts/utils.js';
 
 export default function decorate(block) {
-  const params = new URLSearchParams(window.location.search);
-  console.log('full URL:', window.location.href);
+  console.log('✅ blog-detail block loaded');
+  console.log('URL:', window.location.href);
   console.log('search:', window.location.search);
 
-  console.log('title:', params.get('title'));
-  console.log('author:', params.get('author'));
+  const params = new URLSearchParams(window.location.search);
   console.log('all params:', Object.fromEntries(params));
 
   const item = {
