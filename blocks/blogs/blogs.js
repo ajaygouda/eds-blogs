@@ -30,8 +30,16 @@ export default function decorate(block) {
       </div>
     `;
     blog.addEventListener('click', () => {
-      sessionStorage.setItem('blogDetails', JSON.stringify(blog));
-      window.location.href = 'blog/blog-details';
+      sessionStorage.setItem('blogBanner', item?.banner ?? '');
+
+      const params = new URLSearchParams({
+        title: item?.title ?? '',
+        description: item?.description ?? '',
+        postedDate: item?.postedDate ?? '',
+        author: item?.author ?? '',
+        tags: item?.tags ?? '',
+      });
+      window.location.href = `/blogs/blog-detail?${params}`;
     });
     block.appendChild(blog);
   });
