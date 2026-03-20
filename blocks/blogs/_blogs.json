@@ -82,20 +82,20 @@
               "value": "technology"
             },
             {
-              "name": "Design",
-              "value": "design"
+              "name": "Bollywood",
+              "value": "bollywood"
             },
             {
-              "name": "Business",
-              "value": "business"
+              "name": "Fashion & Beauty",
+              "value": "Fashion & Beauty"
             },
             {
-              "name": "Marketing",
-              "value": "marketing"
+              "name": "Lifestyle",
+              "value": "lifestyle"
             },
             {
-              "name": "Development",
-              "value": "development"
+              "name": "Trending",
+              "value": "trending"
             }
           ]
         }
