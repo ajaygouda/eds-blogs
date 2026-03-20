@@ -24,34 +24,39 @@
             "resourceType": "core/franklin/components/block/v1/block/item",
             "template": {
               "name": "Card",
-              "fields": [
-                {
-                  "component": "reference",
-                  "valueType": "string",
-                  "name": "image",
-                  "label": "Image",
-                  "multi": false
-                },
-                {
-                  "component": "text",
-                  "name": "title",
-                  "label": "Title",
-                  "valueType": "string"
-                },
-                {
-                  "component": "richtext",
-                  "name": "description",
-                  "label": "Description",
-                  "valueType": "string"
-                }
-              ]
+              "model": "card"
             }
           }
         }
       }
     }
   ],
-  "models": [],
+  "models": [
+    {
+      "id": "card",
+      "fields": [
+        {
+          "component": "reference",
+          "valueType": "string",
+          "name": "image",
+          "label": "Image",
+          "multi": false
+        },
+        {
+          "component": "text",
+          "name": "title",
+          "label": "Title",
+          "valueType": "string"
+        },
+        {
+          "component": "richtext",
+          "name": "description",
+          "label": "Description",
+          "valueType": "string"
+        }
+      ]
+    }
+  ],
   "filters": [
     {
       "id": "cards",
