@@ -1,12 +1,16 @@
 .blog-detail {
+  margin: 0 auto;
+}
+
+.blog-detail__body {
   max-width: 800px;
   margin: 0 auto;
-  padding: 2rem;
 }
 
 .blog-detail__banner img {
   width: 100%;
-  border-radius: 8px;
+  height: 400px;
+  object-fit: fill;
 }
 
 .blog-detail__title {

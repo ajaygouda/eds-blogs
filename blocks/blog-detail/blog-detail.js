@@ -1,29 +1,15 @@
 import formatDate from '../../scripts/utils.js';
 
 export default function decorate(block) {
-  console.log('✅ blog-detail block loaded');
-  console.log('URL:', window.location.href);
-  console.log('search:', window.location.search);
+  const item = JSON.parse(sessionStorage.getItem('blogDetail'));
 
-  const params = new URLSearchParams(window.location.search);
-  console.log('all params:', Object.fromEntries(params));
-
-  const item = {
-    banner: params.get('banner') ?? '',
-    title: params.get('title') ?? '',
-    description: params.get('description') ?? '',
-    postedDate: params.get('postedDate') ?? '',
-    author: params.get('author') ?? '',
-    tags: params.get('tags') ?? '',
-  };
-
-  if (!item.title) {
-    block.innerHTML = '<p>Blog not found.</p>';
+  if (!item) {
+    block.innerHTML = '<p>Blog not found. <a href="/blogs">Go back</a></p>';
     return;
   }
 
   block.innerHTML = `
-    <div class="blog-detail">
+    <div class="blog-detail__inner">
       <div class="blog-detail__banner">${item.banner}</div>
       <div class="blog-detail__body">
         <p class="blog-detail__tags">${item.tags}</p>

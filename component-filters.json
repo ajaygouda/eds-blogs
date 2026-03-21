@@ -29,12 +29,6 @@
     ]
   },
   {
-    "id": "section",
-    "components": [
-      "blog-detail"
-    ]
-  },
-  {
     "id": "blogs",
     "components": [
       "blog"
