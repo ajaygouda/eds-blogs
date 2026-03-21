@@ -50,6 +50,7 @@
         "hero",
         "cards",
         "blogs",
+        "blog-detail",
         "columns",
         "fragment",
         "carousel",
