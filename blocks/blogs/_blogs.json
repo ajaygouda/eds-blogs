@@ -72,9 +72,9 @@
         },
         {
           "component": "multiselect",
-          "name": "tags",
+          "name": "category",
           "value": "",
-          "label": "Tags",
+          "label": "Category",
           "valueType": "string[]",
           "options": [
             {
@@ -98,6 +98,14 @@
               "value": "trending"
             }
           ]
+        },
+        {
+          "component": "text",
+          "name": "tags",
+          "value": "",
+          "label": "Tags (comma separated)",
+          "valueType": "string",
+          "description": "Enter tags separated by commas e.g. food,travel,music"
         }
       ]
     }

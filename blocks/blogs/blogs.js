@@ -13,6 +13,7 @@ export default function decorate(block) {
       postedDate: formatDate(cols[3]?.querySelector('p')?.textContent),
       author: cols[4]?.querySelector('p')?.textContent ?? '',
       category: cols[5]?.querySelector('p')?.textContent ?? '',
+      tags: cols[6]?.querySelector('p')?.textContent ?? '',
     };
   });
 

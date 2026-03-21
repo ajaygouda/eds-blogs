@@ -4,6 +4,10 @@
   grid-template-columns: repeat(3, 1fr);
 }
 
+.blog:hover {
+  cursor: pointer;
+}
+
 .blog__banner>picture>img {
   height: 200px;
   object-fit: cover;
