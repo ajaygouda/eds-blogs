@@ -44,6 +44,6 @@ export default function decorate(block) {
       const slug = item?.title?.toLowerCase().replace(/\s+/g, '-');
       window.location.href = `/blogs/blog-detail?title=${slug}`;
     });
-    block.appenChild(blog);
+    block.appendChild(blog);
   });
 }
