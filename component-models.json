@@ -1,385 +1,383 @@
-{
-  "models": [
-    {
-      "id": "page-metadata",
-      "fields": [
-        {
-          "component": "text",
-          "valueType": "string",
-          "name": "jcr:title",
-          "label": "Title"
-        },
-        {
-          "component": "text",
-          "valueType": "string",
-          "name": "jcr:description",
-          "label": "Description"
-        },
-        {
-          "component": "text",
-          "valueType": "string",
-          "name": "keywords",
-          "multi": true,
-          "label": "Keywords"
-        }
-      ]
-    },
-    {
-      "id": "image",
-      "fields": [
-        {
-          "component": "reference",
-          "name": "image",
-          "label": "Image",
-          "multi": false
-        },
-        {
-          "component": "text",
-          "name": "imageAlt",
-          "label": "Alt Text"
-        }
-      ]
-    },
-    {
-      "id": "title",
-      "fields": [
-        {
-          "component": "text",
-          "name": "title",
-          "label": "Title"
-        },
-        {
-          "component": "select",
-          "name": "titleType",
-          "label": "Title Type",
-          "options": [
-            {
-              "name": "h1",
-              "value": "h1"
-            },
-            {
-              "name": "h2",
-              "value": "h2"
-            },
-            {
-              "name": "h3",
-              "value": "h3"
-            },
-            {
-              "name": "h4",
-              "value": "h4"
-            },
-            {
-              "name": "h5",
-              "value": "h5"
-            },
-            {
-              "name": "h6",
-              "value": "h6"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "button",
-      "fields": [
-        {
-          "component": "aem-content",
-          "name": "link",
-          "label": "Link"
-        },
-        {
-          "component": "text",
-          "name": "linkText",
-          "label": "Text"
-        },
-        {
-          "component": "text",
-          "name": "linkTitle",
-          "label": "Title"
-        },
-        {
-          "component": "select",
-          "name": "linkType",
-          "label": "Type",
-          "options": [
-            {
-              "name": "default",
-              "value": ""
-            },
-            {
-              "name": "primary",
-              "value": "primary"
-            },
-            {
-              "name": "secondary",
-              "value": "secondary"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "section",
-      "fields": [
-        {
-          "component": "text",
-          "name": "name",
-          "label": "Section Name",
-          "description": "The label shown for this section in the Content Tree"
-        },
-        {
-          "component": "multiselect",
-          "name": "style",
-          "label": "Style",
-          "options": [
-            {
-              "name": "Highlight",
-              "value": "highlight"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "accordion",
-      "fields": [
-        {
-          "component": "select",
-          "name": "variant",
-          "label": "Style Variant",
-          "valueType": "string",
-          "options": [
-            {
-              "name": "Default",
-              "value": "default"
-            },
-            {
-              "name": "FAQ",
-              "value": "faq"
-            },
-            {
-              "name": "Minimal",
-              "value": "minimal"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "accordion-item",
-      "fields": [
-        {
-          "component": "text",
-          "name": "question",
-          "label": "Question",
-          "valueType": "string",
-          "value": ""
-        },
-        {
-          "component": "richtext",
-          "name": "answer",
-          "label": "Answer",
-          "valueType": "string",
-          "value": ""
-        }
-      ]
-    },
-    {
-      "id": "blog",
-      "fields": [
-        {
-          "component": "reference",
-          "valueType": "string",
-          "name": "image",
-          "label": "Image",
-          "multi": false
-        },
-        {
-          "component": "text",
-          "name": "title",
-          "value": "",
-          "label": "Title",
-          "valueType": "string"
-        },
-        {
-          "component": "richtext",
-          "name": "description",
-          "value": "",
-          "label": "Description",
-          "valueType": "string"
-        },
-        {
-          "component": "date-time",
-          "name": "postedDate",
-          "value": "",
-          "label": "Posted Date",
-          "valueType": "date"
-        },
-        {
-          "component": "text",
-          "name": "author",
-          "value": "",
-          "label": "Author",
-          "valueType": "string"
-        },
-        {
-          "component": "multiselect",
-          "name": "category",
-          "value": "",
-          "label": "Category",
-          "valueType": "string[]",
-          "options": [
-            {
-              "name": "Technology",
-              "value": "technology"
-            },
-            {
-              "name": "Bollywood",
-              "value": "bollywood"
-            },
-            {
-              "name": "Fashion & Beauty",
-              "value": "Fashion & Beauty"
-            },
-            {
-              "name": "Lifestyle",
-              "value": "lifestyle"
-            },
-            {
-              "name": "Trending",
-              "value": "trending"
-            }
-          ]
-        },
-        {
-          "component": "text",
-          "name": "tags",
-          "value": "",
-          "label": "Tags (comma separated)",
-          "valueType": "string",
-          "description": "Enter tags separated by commas e.g. food,travel,music"
-        }
-      ]
-    },
-    {
-      "id": "card",
-      "fields": [
-        {
-          "component": "reference",
-          "valueType": "string",
-          "name": "image",
-          "label": "Image",
-          "multi": false
-        },
-        {
-          "component": "text",
-          "name": "title",
-          "value": "",
-          "label": "Title",
-          "valueType": "string"
-        },
-        {
-          "component": "richtext",
-          "name": "description",
-          "value": "",
-          "label": "Description",
-          "valueType": "string"
-        }
-      ]
-    },
-    {
-      "id": "carousel",
-      "fields": []
-    },
-    {
-      "id": "carousel-item",
-      "fields": [
-        {
-          "component": "text",
-          "name": "title",
-          "label": "Slide Title",
-          "valueType": "string",
-          "value": ""
-        },
-        {
-          "component": "text",
-          "name": "description",
-          "label": "Slide Description",
-          "valueType": "string",
-          "value": ""
-        },
-        {
-          "component": "reference",
-          "name": "image",
-          "label": "Slide Image",
-          "valueType": "string",
-          "multi": false
-        },
-        {
-          "component": "text",
-          "name": "ctaText",
-          "label": "Button Text",
-          "valueType": "string",
-          "value": ""
-        }
-      ]
-    },
-    {
-      "id": "columns",
-      "fields": [
-        {
-          "component": "text",
-          "valueType": "number",
-          "name": "columns",
-          "value": "",
-          "label": "Columns"
-        },
-        {
-          "component": "text",
-          "valueType": "number",
-          "name": "rows",
-          "value": "",
-          "label": "Rows"
-        }
-      ]
-    },
-    {
-      "id": "fragment",
-      "fields": [
-        {
-          "component": "aem-content",
-          "name": "reference",
-          "label": "Reference"
-        }
-      ]
-    },
-    {
-      "id": "hero",
-      "fields": [
-        {
-          "component": "reference",
-          "valueType": "string",
-          "name": "image",
-          "label": "Image",
-          "multi": false
-        },
-        {
-          "component": "text",
-          "valueType": "string",
-          "name": "imageAlt",
-          "label": "Alt",
-          "value": ""
-        },
-        {
-          "component": "richtext",
-          "name": "text",
-          "value": "",
-          "label": "Text",
-          "valueType": "string"
-        }
-      ]
-    }
-  ]
-}
+[
+  {
+    "id": "page-metadata",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "jcr:title",
+        "label": "Title"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "jcr:description",
+        "label": "Description"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "keywords",
+        "multi": true,
+        "label": "Keywords"
+      }
+    ]
+  },
+  {
+    "id": "image",
+    "fields": [
+      {
+        "component": "reference",
+        "name": "image",
+        "label": "Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "name": "imageAlt",
+        "label": "Alt Text"
+      }
+    ]
+  },
+  {
+    "id": "title",
+    "fields": [
+      {
+        "component": "text",
+        "name": "title",
+        "label": "Title"
+      },
+      {
+        "component": "select",
+        "name": "titleType",
+        "label": "Title Type",
+        "options": [
+          {
+            "name": "h1",
+            "value": "h1"
+          },
+          {
+            "name": "h2",
+            "value": "h2"
+          },
+          {
+            "name": "h3",
+            "value": "h3"
+          },
+          {
+            "name": "h4",
+            "value": "h4"
+          },
+          {
+            "name": "h5",
+            "value": "h5"
+          },
+          {
+            "name": "h6",
+            "value": "h6"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "button",
+    "fields": [
+      {
+        "component": "aem-content",
+        "name": "link",
+        "label": "Link"
+      },
+      {
+        "component": "text",
+        "name": "linkText",
+        "label": "Text"
+      },
+      {
+        "component": "text",
+        "name": "linkTitle",
+        "label": "Title"
+      },
+      {
+        "component": "select",
+        "name": "linkType",
+        "label": "Type",
+        "options": [
+          {
+            "name": "default",
+            "value": ""
+          },
+          {
+            "name": "primary",
+            "value": "primary"
+          },
+          {
+            "name": "secondary",
+            "value": "secondary"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "section",
+    "fields": [
+      {
+        "component": "text",
+        "name": "name",
+        "label": "Section Name",
+        "description": "The label shown for this section in the Content Tree"
+      },
+      {
+        "component": "multiselect",
+        "name": "style",
+        "label": "Style",
+        "options": [
+          {
+            "name": "Highlight",
+            "value": "highlight"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "accordion",
+    "fields": [
+      {
+        "component": "select",
+        "name": "variant",
+        "label": "Style Variant",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Default",
+            "value": "default"
+          },
+          {
+            "name": "FAQ",
+            "value": "faq"
+          },
+          {
+            "name": "Minimal",
+            "value": "minimal"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "accordion-item",
+    "fields": [
+      {
+        "component": "text",
+        "name": "question",
+        "label": "Question",
+        "valueType": "string",
+        "value": ""
+      },
+      {
+        "component": "richtext",
+        "name": "answer",
+        "label": "Answer",
+        "valueType": "string",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "id": "blog",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "name": "title",
+        "value": "",
+        "label": "Title",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "description",
+        "value": "",
+        "label": "Description",
+        "valueType": "string"
+      },
+      {
+        "component": "date-time",
+        "name": "postedDate",
+        "value": "",
+        "label": "Posted Date",
+        "valueType": "date"
+      },
+      {
+        "component": "text",
+        "name": "author",
+        "value": "",
+        "label": "Author",
+        "valueType": "string"
+      },
+      {
+        "component": "multiselect",
+        "name": "category",
+        "value": "",
+        "label": "Category",
+        "valueType": "string[]",
+        "options": [
+          {
+            "name": "Technology",
+            "value": "technology"
+          },
+          {
+            "name": "Bollywood",
+            "value": "bollywood"
+          },
+          {
+            "name": "Fashion & Beauty",
+            "value": "Fashion & Beauty"
+          },
+          {
+            "name": "Lifestyle",
+            "value": "lifestyle"
+          },
+          {
+            "name": "Trending",
+            "value": "trending"
+          }
+        ]
+      },
+      {
+        "component": "text",
+        "name": "tags",
+        "value": "",
+        "label": "Tags (comma separated)",
+        "valueType": "string",
+        "description": "Enter tags separated by commas e.g. food,travel,music"
+      }
+    ]
+  },
+  {
+    "id": "card",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "name": "title",
+        "value": "",
+        "label": "Title",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "description",
+        "value": "",
+        "label": "Description",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "carousel",
+    "fields": []
+  },
+  {
+    "id": "carousel-item",
+    "fields": [
+      {
+        "component": "text",
+        "name": "title",
+        "label": "Slide Title",
+        "valueType": "string",
+        "value": ""
+      },
+      {
+        "component": "text",
+        "name": "description",
+        "label": "Slide Description",
+        "valueType": "string",
+        "value": ""
+      },
+      {
+        "component": "reference",
+        "name": "image",
+        "label": "Slide Image",
+        "valueType": "string",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "name": "ctaText",
+        "label": "Button Text",
+        "valueType": "string",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "id": "columns",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "number",
+        "name": "columns",
+        "value": "",
+        "label": "Columns"
+      },
+      {
+        "component": "text",
+        "valueType": "number",
+        "name": "rows",
+        "value": "",
+        "label": "Rows"
+      }
+    ]
+  },
+  {
+    "id": "fragment",
+    "fields": [
+      {
+        "component": "aem-content",
+        "name": "reference",
+        "label": "Reference"
+      }
+    ]
+  },
+  {
+    "id": "hero",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "imageAlt",
+        "label": "Alt",
+        "value": ""
+      },
+      {
+        "component": "richtext",
+        "name": "text",
+        "value": "",
+        "label": "Text",
+        "valueType": "string"
+      }
+    ]
+  }
+]
