@@ -8,14 +8,15 @@ export default function decorate(block) {
     const cols = [...blog.children];
     return {
       banner: cols[0]?.querySelector('picture')?.outerHTML ?? '',
-      title: cols[1]?.textContent?.trim() ?? '',
-      description: cols[2]?.textContent?.trim() ?? '',
-      postedDate: formatDate(cols[3]?.textContent?.trim() ?? ''),
-      author: cols[4]?.textContent?.trim() ?? '',
-      category: cols[5]?.textContent?.trim() ?? '',
-      tags: cols[6]?.textContent?.trim() ?? '',
+      title: cols[1]?.querySelector('p')?.textContent?.trim() ?? '',
+      description: cols[2]?.querySelector('p')?.textContent?.trim() ?? '',
+      postedDate: formatDate(cols[3]?.querySelector('p')?.textContent?.trim() ?? ''),
+      author: cols[4]?.querySelector('p')?.textContent?.trim() ?? '',
+      category: cols[5]?.querySelector('p')?.textContent?.trim() ?? '',
+      tags: cols[6]?.querySelector('p')?.textContent?.trim() ?? '',
     };
   });
+
   const fragment = document.createDocumentFragment();
   blogsData.forEach((item) => {
     const blog = document.createElement('div');
