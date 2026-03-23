@@ -1,12 +1,12 @@
 import formatDate from '../../scripts/utils.js';
 
 export default function decorate(block) {
+  console.log(block);
   const blogsList = [...block.children];
   console.log(blogsList);
 
   const blogsData = blogsList.map((blog) => {
     const cols = [...blog.children];
-    console.log(cols[0]);
     return {
       banner: cols[0]?.querySelector('picture')?.outerHTML ?? '',
       title: cols[1]?.querySelector('p')?.textContent ?? '',
@@ -17,7 +17,7 @@ export default function decorate(block) {
       tags: cols[6]?.querySelector('p')?.textContent ?? '',
     };
   });
-
+  const fragment = document.createDocumentFragment();
   blogsData.forEach((item) => {
     const blog = document.createElement('div');
     blog.classList.add('blog');
@@ -46,6 +46,7 @@ export default function decorate(block) {
       window.location.href = `/blogs/blog-detail?title=${slug}`;
     });
 
-    block.appendChild(blog);
+    fragment.appendChild(blog);
   });
+  block.replaceChildren(fragment);
 }
