@@ -17,6 +17,7 @@ export default function decorate(block) {
     };
   });
 
+  const fragment = document.createDocumentFragment();
   blogsData.forEach((item) => {
     const blog = document.createElement('div');
     blog.classList.add('blog');
@@ -44,7 +45,7 @@ export default function decorate(block) {
       const slug = item?.title?.toLowerCase().replace(/\s+/g, '-');
       window.location.href = `/blogs/blog-detail?title=${slug}`;
     });
-
-    block.appendChild(blog);
+    fragment.appendChild(blog);
   });
+  block.replaceChildren(fragment);
 }
