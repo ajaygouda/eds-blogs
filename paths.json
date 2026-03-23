@@ -4,5 +4,10 @@
   ],
   "includes": [
     "/content/vation-eds-blogs/"
+  ],
+  "excludes": [
+    "/component-definition.json",
+    "/component-models.json",
+    "/component-filters.json"
   ]
 }
