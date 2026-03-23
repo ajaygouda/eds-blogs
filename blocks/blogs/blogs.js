@@ -4,19 +4,19 @@ export default function decorate(block) {
   const blogsList = [...block.children];
   block.innerHTML = '';
 
-  const blogsData = blogsList?.map((blog) => {
+  const blogsData = blogsList.map((blog) => {
     const cols = [...blog.children];
     return {
       banner: cols[0]?.querySelector('picture')?.outerHTML ?? '',
       title: cols[1]?.textContent?.trim() ?? '',
       description: cols[2]?.textContent?.trim() ?? '',
-      postedDate: formatDate(cols[3]?.textContent?.trim()),
+      postedDate: formatDate(cols[3]?.textContent?.trim() ?? ''),
       author: cols[4]?.textContent?.trim() ?? '',
       category: cols[5]?.textContent?.trim() ?? '',
       tags: cols[6]?.textContent?.trim() ?? '',
     };
   });
-
+  const fragment = document.createDocumentFragment();
   blogsData.forEach((item) => {
     const blog = document.createElement('div');
     blog.classList.add('blog');
@@ -44,6 +44,7 @@ export default function decorate(block) {
       const slug = item?.title?.toLowerCase().replace(/\s+/g, '-');
       window.location.href = `/blogs/blog-detail?title=${slug}`;
     });
-    block.appendChild(blog);
+    fragment.appendChild(blog);
   });
+  block.replaceChildren(fragment);
 }
