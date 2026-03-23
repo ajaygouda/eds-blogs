@@ -11,7 +11,7 @@
 
 .accordion__item--active>.accordion__item-content {
   display: block;
-  transition-duration: ease(0.5);
+  transition: all 0.5s ease;
 }
 
 .accordion__item--active>.accordion__item-header>span {
