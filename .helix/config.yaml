@@ -1,0 +1,4 @@
+version: 1
+cdn:
+  prod:
+    host: main--eds-blogs--ajaygouda.aem.page
