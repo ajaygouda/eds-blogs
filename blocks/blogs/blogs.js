@@ -4,20 +4,29 @@ export default function decorate(block) {
   blogsList.forEach((blog) => {
     const cols = [...blog.children];
 
+    // Create wrappers
+    const bannerWrapper = document.createElement('div');
+    bannerWrapper.classList.add('blog__banner');
+
+    const contentWrapper = document.createElement('div');
+    contentWrapper.classList.add('blog__content');
+
+    // Move existing elements (IMPORTANT)
+    if (cols[0]) bannerWrapper.appendChild(cols[0]); // image
+    if (cols[1]) contentWrapper.appendChild(cols[1]); // title
+    if (cols[2]) contentWrapper.appendChild(cols[2]); // description
+    if (cols[3]) contentWrapper.appendChild(cols[3]); // date
+    if (cols[4]) contentWrapper.appendChild(cols[4]); // author
+    if (cols[5]) contentWrapper.appendChild(cols[5]); // category
+
+    // Clear blog row
+    blog.innerHTML = '';
+
+    // Append structured layout
+    blog.appendChild(bannerWrapper);
+    blog.appendChild(contentWrapper);
+
+    // Add class
     blog.classList.add('blog');
-
-    cols[0]?.classList.add('blog__banner');
-    cols[1]?.classList.add('blog__title');
-    cols[2]?.classList.add('blog__description');
-    cols[3]?.classList.add('blog__date');
-    cols[4]?.classList.add('blog__author');
-    cols[5]?.classList.add('blog__category');
-
-    blog.addEventListener('click', () => {
-      const title = cols[1]?.textContent;
-      const slug = title?.toLowerCase().replace(/\s+/g, '-');
-
-      window.location.href = `/blogs/blog-detail?title=${slug}`;
-    });
   });
 }
