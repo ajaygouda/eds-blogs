@@ -1,4 +1,4 @@
-function formatDate(dateString) {
+export function formatDate(dateString) {
   if (!dateString) return '';
 
   const date = new Date(dateString.split('T')[0]);
@@ -10,4 +10,8 @@ function formatDate(dateString) {
   return `${day}.${month}.${year}`;
 }
 
-export default formatDate;
+export function extractWraperDiv(data, elementName, className) {
+  const el = data?.querySelector(elementName);
+  if (el && className) el.classList.add(className);
+  return el;
+}
