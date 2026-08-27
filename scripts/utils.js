@@ -15,3 +15,8 @@ export function extractWraperDiv(data, elementName, className) {
   if (el && className) el.classList.add(className);
   return el;
 }
+
+export function getSession(key) {
+  const value = sessionStorage.getItem(key);
+  return value ? JSON.parse(value) : null;
+}

@@ -44,14 +44,12 @@ export default function decorate(block) {
     blog.appendChild(bannerWrapper);
     contentWrapper.appendChild(authorDate);
     blog.appendChild(contentWrapper);
-    console.log('data', data);
 
     blog.classList.add('blog');
     blog.addEventListener('click', () => {
-      sessionStorage.removeItem('blogDetail');
       sessionStorage.setItem('blogDetail', JSON.stringify(data));
-      const slug = data?.title?.toLowerCase().replace(/\s+/g, '-');
-      window.location.href = `/blog/blog-detail?title=${slug}`;
+      const slug = data?.title?.toLowerCase().replace(/[^a-z0-9\s]/g, '').trim().replace(/\s+/g, '-');
+      window.location.href = `/blogs/blog-detail?title=${slug}`;
     });
   });
 }
