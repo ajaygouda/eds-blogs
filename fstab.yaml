@@ -1,3 +1,5 @@
 mountpoints:
   /:
-    url: "https://author-p127270-e1713202.adobeaemcloud.com/content/vation-eds-blogs"
+    url: "https://github.com/ajaygouda/eds-blogs/main"
+    type: "markup"
+    suffix: ".html"
