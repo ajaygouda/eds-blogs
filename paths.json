@@ -1,7 +1,7 @@
 {
   "mappings": {
-    "/": "/content/vation-eds-blogs",
-    "/blogs": "/content/vation-eds-blogs/blogs"
+    "/": "/content/eds-universal-editor-practice/index",
+    "/blogs": "/content/eds-universal-editor-practice/index"
   },
   "includes": ["/"]
 }
