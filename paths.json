@@ -1,12 +1,7 @@
 {
   "mappings": {
-    "/": "/index.html",
-    "/blogs": "/blogs.html"
+    "/": "/content/vation-eds-blogs",
+    "/blogs": "/content/vation-eds-blogs/blogs"
   },
-  "includes": ["/"],
-  "excludes": [
-    "/component-definition.json",
-    "/component-models.json",
-    "/component-filters.json"
-  ]
+  "includes": ["/"]
 }
