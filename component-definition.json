@@ -197,7 +197,52 @@
                 "template": {
                   "name": "Carousel",
                   "model": "carousel",
-                  "filter": "carousel"
+                  "filter": "carousel",
+                  "structure": {
+                    "element": "div",
+                    "classes": [
+                      "carousel"
+                    ],
+                    "children": [
+                      {
+                        "element": "h2",
+                        "binding": "title"
+                      },
+                      {
+                        "element": "div",
+                        "classes": [
+                          "carousel-items"
+                        ],
+                        "repeat": "carousel-item",
+                        "children": [
+                          {
+                            "element": "div",
+                            "classes": [
+                              "carousel-slide"
+                            ],
+                            "children": [
+                              {
+                                "element": "img",
+                                "binding": "image"
+                              },
+                              {
+                                "element": "h3",
+                                "binding": "title"
+                              },
+                              {
+                                "element": "p",
+                                "binding": "description"
+                              },
+                              {
+                                "element": "button",
+                                "binding": "ctaText"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
                 }
               }
             }
