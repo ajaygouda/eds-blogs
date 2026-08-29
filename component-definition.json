@@ -195,10 +195,27 @@
             "xwalk": {
               "page": {
                 "resourceType": "core/franklin/components/block/v1/block",
+                "container": true,
                 "template": {
                   "name": "Carousel",
                   "model": "carousel",
                   "filter": "carousel",
+                  "definitions": [
+                    {
+                      "id": "carousel-item",
+                      "title": "Carousel Item",
+                      "plugins": {
+                        "xwalk": {
+                          "page": {
+                            "template": {
+                              "name": "Carousel Item",
+                              "model": "carousel-item"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ],
                   "structure": {
                     "element": "div",
                     "classes": [
