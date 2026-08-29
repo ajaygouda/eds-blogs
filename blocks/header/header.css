@@ -2,6 +2,7 @@
 header {
     padding: 24px 0;
 }
+
 header .nav-wrapper {
     background-color: var(--background-color);
     width: 100%;
@@ -59,6 +60,7 @@ header .search {
     justify-content: end;
     position: relative;
 }
+
 header .search .icon {
     position: absolute;
     left: 8px;
@@ -82,9 +84,11 @@ header nav p {
     display: inline-block;
     padding: 20px;
 }
+
 header nav p:hover {
     cursor: pointer;
 }
+
 header nav a {
     padding: 20px;
     line-height: 28px;
@@ -184,6 +188,7 @@ header .nav-brand {
     font-weight: 700;
     line-height: 1;
 }
+
 header .nav-brand:hover {
     cursor: pointer;
 }
