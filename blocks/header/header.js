@@ -1,5 +1,6 @@
 import { getMetadata } from '../../scripts/aem.js';
 import { loadFragment } from '../fragment/fragment.js';
+import { getBlogsData } from '../../scripts/utils.js';
 
 // media query match that indicates mobile/tablet width
 const isDesktop = window.matchMedia('(min-width: 900px)');
@@ -108,6 +109,8 @@ function toggleMenu(nav, navSections, forceExpanded = null) {
  * @param {Element} block The header block element
  */
 export default async function decorate(block) {
+  window.blogsData = await getBlogsData();
+
   // load nav as fragment
   const navMeta = getMetadata('nav');
   const navPath = navMeta ? new URL(navMeta, window.location).pathname : '/nav';
@@ -126,6 +129,10 @@ export default async function decorate(block) {
   });
 
   const navBrand = nav.querySelector('.nav-brand');
+  navBrand.addEventListener('click', (event) => {
+    event.preventDefault();
+    window.location.href = '/';
+  });
   const brandLink = navBrand.querySelector('.button');
   if (brandLink) {
     brandLink.className = '';
@@ -135,6 +142,12 @@ export default async function decorate(block) {
   const navSections = nav.querySelector('.nav-sections');
   if (navSections) {
     navSections.querySelectorAll(':scope .default-content-wrapper > ul > li').forEach((navSection) => {
+      const navLink = navSection.querySelector(':scope > a');
+      if (navLink) {
+        const currentPath = window.location.pathname.replace(/\/$/, '') || '/';
+        const linkPath = new URL(navLink.href, window.location).pathname.replace(/\/$/, '') || '/';
+        if (currentPath === linkPath) navSection.classList.add('active');
+      }
       if (navSection.querySelector('ul')) navSection.classList.add('nav-drop');
       navSection.addEventListener('click', () => {
         if (isDesktop.matches) {

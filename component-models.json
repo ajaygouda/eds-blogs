@@ -302,8 +302,14 @@
         "name": "style",
         "label": "Style Variant",
         "options": [
-          { "name": "Default", "value": "default" },
-          { "name": "Minimal", "value": "minimal" }
+          {
+            "name": "Default",
+            "value": "default"
+          },
+          {
+            "name": "Minimal",
+            "value": "minimal"
+          }
         ]
       }
     ]
@@ -315,13 +321,15 @@
         "component": "text",
         "name": "title",
         "label": "Slide Title",
-        "valueType": "string"
+        "valueType": "string",
+        "value": ""
       },
       {
         "component": "text",
         "name": "description",
         "label": "Slide Description",
-        "valueType": "string"
+        "valueType": "string",
+        "value": ""
       },
       {
         "component": "reference",
@@ -334,7 +342,8 @@
         "component": "text",
         "name": "ctaText",
         "label": "Button Text",
-        "valueType": "string"
+        "valueType": "string",
+        "value": ""
       }
     ]
   },

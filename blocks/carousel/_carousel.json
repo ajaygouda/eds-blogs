@@ -35,7 +35,23 @@
   "models": [
     {
       "id": "carousel",
-      "fields": []
+      "fields": [
+        {
+          "component": "text",
+          "name": "title",
+          "label": "Carousel Title",
+          "valueType": "string"
+        },
+        {
+          "component": "multiselect",
+          "name": "style",
+          "label": "Style Variant",
+          "options": [
+            { "name": "Default", "value": "default" },
+            { "name": "Minimal", "value": "minimal" }
+          ]
+        }
+      ]
     },
     {
       "id": "carousel-item",
@@ -74,9 +90,7 @@
   "filters": [
     {
       "id": "carousel",
-      "components": [
-        "carousel-item"
-      ]
+      "components": ["carousel-item"]
     }
   ]
 }

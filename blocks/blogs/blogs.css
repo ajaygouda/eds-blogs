@@ -40,7 +40,7 @@
 
 .blog__author-date {
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: row-reverse wrap;
     justify-content: flex-end;
     gap: 10px;
     font-size: 14px;

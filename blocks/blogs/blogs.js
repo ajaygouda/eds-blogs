@@ -1,21 +1,11 @@
-import { formatDate, extractWraperDiv } from '../../scripts/utils.js';
+import { formatDate, extractWraperDiv, getBlogsData } from '../../scripts/utils.js';
 
-export default function decorate(block) {
+export default async function decorate(block) {
   const blogsList = [...block.children];
-
-  blogsList.forEach((blog) => {
+  const blogsData = await getBlogsData() || [];
+  blogsList.forEach((blog, index) => {
     const cols = [...blog.children];
-
-    const data = {
-      banner: cols[0]?.querySelector('picture')?.outerHTML || '',
-      title: cols[1]?.textContent?.trim() || '',
-      description: cols[2]?.textContent?.trim() || '',
-      date: formatDate(cols[3]?.textContent?.trim()),
-      author: cols[4]?.textContent?.trim() || '',
-      category: cols[5]?.textContent?.trim() || '',
-      tags: cols[6]?.textContent?.trim() || '',
-    };
-
+    const data = blogsData[index];
     // Create wrappers
     const bannerWrapper = document.createElement('div');
     bannerWrapper.classList.add('blog__banner');
