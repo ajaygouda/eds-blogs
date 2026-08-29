@@ -29,7 +29,12 @@
                           { "element": "img", "binding": "image" },
                           { "element": "h3", "binding": "title" },
                           { "element": "p", "binding": "description" },
-                          { "element": "button", "binding": "ctaText" }
+                          {
+                            "element": "a",
+                            "classes": ["button"],
+                            "binding": "link",
+                            "textContent": "ctaText"
+                          }
                         ]
                       }
                     ]
@@ -88,6 +93,12 @@
           "component": "text",
           "name": "ctaText",
           "label": "Button Text",
+          "valueType": "string"
+        },
+        {
+          "component": "text",
+          "name": "link",
+          "label": "Button Link URL",
           "valueType": "string"
         }
       ]

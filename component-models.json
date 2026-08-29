@@ -340,6 +340,12 @@
         "name": "ctaText",
         "label": "Button Text",
         "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "link",
+        "label": "Button Link URL",
+        "valueType": "string"
       }
     ]
   },

@@ -235,8 +235,12 @@
                                 "binding": "description"
                               },
                               {
-                                "element": "button",
-                                "binding": "ctaText"
+                                "element": "a",
+                                "classes": [
+                                  "button"
+                                ],
+                                "binding": "link",
+                                "textContent": "ctaText"
                               }
                             ]
                           }
