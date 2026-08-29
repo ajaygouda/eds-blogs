@@ -159,6 +159,61 @@ export default async function decorate(block) {
     });
   }
 
+  const iconSearch = nav.querySelector('.icon-search');
+  if (iconSearch) {
+    const search = document.createElement('div');
+    search.className = 'search';
+    search.innerHTML = `
+      <input id="global-search" type="text" placeholder="Search..." />
+      <span class="icon icon-search">
+        <img src="/icons/search.svg" alt="search" width="16" height="16" />
+      </span>
+      <div id="search-results" class="hidden"></div>
+    `;
+    iconSearch.closest('p')?.replaceWith(search);
+
+    const searchInput = search.querySelector('#global-search');
+    const searchResults = search.querySelector('#search-results');
+    const renderSearchResults = () => {
+      const query = searchInput.value.trim().toLowerCase();
+      searchResults.replaceChildren();
+      if (!query) {
+        searchResults.classList.add('hidden');
+        return;
+      }
+
+      const matches = (window.blogsData || []).filter((blog) => {
+        const searchableText = [blog.title, blog.description, blog.author, blog.category, blog.tags]
+          .join(' ')
+          .toLowerCase();
+        return searchableText.includes(query);
+      }).slice(0, 6);
+
+      matches.forEach((blog) => {
+        const result = document.createElement('a');
+        result.href = `/blogs/blog-detail?title=${blog.title.toLowerCase().replace(/[^a-z0-9\s]/g, '').trim().replace(/\s+/g, '-')}`;
+        result.textContent = blog.title;
+        searchResults.append(result);
+      });
+      searchResults.classList.remove('hidden');
+    };
+
+    searchInput.addEventListener('input', renderSearchResults);
+    searchInput.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter') {
+        search.classList.add('search-active');
+        renderSearchResults();
+      }
+    });
+    search.addEventListener('click', () => search.classList.add('search-active'));
+    document.addEventListener('click', (event) => {
+      if (!search.contains(event.target)) {
+        search.classList.remove('search-active');
+        searchResults.classList.add('hidden');
+      }
+    });
+  }
+
   // hamburger for mobile
   const hamburger = document.createElement('div');
   hamburger.classList.add('nav-hamburger');
