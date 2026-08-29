@@ -188,16 +188,22 @@
           }
         },
         {
-          "title": "Carousel",
           "id": "carousel",
+          "title": "Carousel",
+          "category": "Layout",
           "plugins": {
             "xwalk": {
-              "page": {
-                "resourceType": "core/franklin/components/block/v1/block",
+              "pagebuilder": {
+                "icon": "images",
                 "template": {
                   "name": "Carousel",
                   "model": "carousel",
-                  "filter": "carousel",
+                  "definitions": [
+                    {
+                      "name": "Carousel Item",
+                      "model": "carousel-item"
+                    }
+                  ],
                   "structure": {
                     "element": "div",
                     "classes": [
@@ -243,21 +249,6 @@
                       }
                     ]
                   }
-                }
-              }
-            }
-          }
-        },
-        {
-          "title": "Carousel Item",
-          "id": "carousel-item",
-          "plugins": {
-            "xwalk": {
-              "page": {
-                "resourceType": "core/franklin/components/block/v1/block-item",
-                "template": {
-                  "name": "Carousel Item",
-                  "model": "carousel-item"
                 }
               }
             }

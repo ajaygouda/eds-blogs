@@ -321,29 +321,25 @@
         "component": "text",
         "name": "title",
         "label": "Slide Title",
-        "valueType": "string",
-        "value": ""
+        "valueType": "string"
       },
       {
         "component": "text",
         "name": "description",
         "label": "Slide Description",
-        "valueType": "string",
-        "value": ""
+        "valueType": "string"
       },
       {
         "component": "reference",
         "name": "image",
         "label": "Slide Image",
-        "valueType": "string",
-        "multi": false
+        "valueType": "string"
       },
       {
         "component": "text",
         "name": "ctaText",
         "label": "Button Text",
-        "valueType": "string",
-        "value": ""
+        "valueType": "string"
       }
     ]
   },
