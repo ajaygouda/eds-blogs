@@ -41,7 +41,12 @@
                     ]
                   }
                 ]
-              }
+              },
+              "initial": [
+                {
+                  "component": "carousel-item"
+                }
+              ]
             }
           }
         }

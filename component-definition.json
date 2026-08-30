@@ -248,7 +248,12 @@
                         ]
                       }
                     ]
-                  }
+                  },
+                  "initial": [
+                    {
+                      "component": "carousel-item"
+                    }
+                  ]
                 }
               }
             }
