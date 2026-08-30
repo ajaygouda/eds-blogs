@@ -289,65 +289,65 @@
     ]
   },
   {
-    "id": "carousel",
-    "fields": [
-      {
-        "component": "text",
-        "name": "title",
-        "label": "Carousel Title",
-        "valueType": "string"
-      },
-      {
-        "component": "multiselect",
-        "name": "style",
-        "label": "Style Variant",
-        "options": [
-          {
-            "name": "Default",
-            "value": "default"
-          },
-          {
-            "name": "Minimal",
-            "value": "minimal"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "carousel-item",
-    "fields": [
-      {
-        "component": "text",
-        "name": "title",
-        "label": "Slide Title",
-        "valueType": "string"
-      },
-      {
-        "component": "text",
-        "name": "description",
-        "label": "Slide Description",
-        "valueType": "string"
-      },
-      {
-        "component": "reference",
-        "name": "image",
-        "label": "Slide Image",
-        "valueType": "string"
-      },
-      {
-        "component": "text",
-        "name": "ctaText",
-        "label": "Button Text",
-        "valueType": "string"
-      },
-      {
-        "component": "text",
-        "name": "link",
-        "label": "Button Link URL",
-        "valueType": "string"
-      }
-    ]
+    "carousel": {
+      "fields": [
+        {
+          "component": "text",
+          "name": "title",
+          "label": "Carousel Title",
+          "valueType": "string"
+        },
+        {
+          "component": "multiselect",
+          "name": "style",
+          "label": "Style Variant",
+          "options": [
+            {
+              "name": "Default",
+              "value": "default"
+            },
+            {
+              "name": "Minimal",
+              "value": "minimal"
+            }
+          ]
+        }
+      ]
+    },
+    "carousel-item": {
+      "fields": [
+        {
+          "component": "text",
+          "name": "title",
+          "label": "Slide Title",
+          "valueType": "string"
+        },
+        {
+          "component": "text",
+          "name": "description",
+          "label": "Slide Description",
+          "valueType": "string"
+        },
+        {
+          "component": "reference",
+          "name": "image",
+          "label": "Slide Image",
+          "valueType": "string"
+        },
+        {
+          "component": "text",
+          "name": "ctaText",
+          "label": "Button Text",
+          "valueType": "string"
+        },
+        {
+          "component": "text",
+          "name": "link",
+          "label": "Button Link URL",
+          "valueType": "string"
+        }
+      ]
+    }
   },
   {
     "id": "columns",

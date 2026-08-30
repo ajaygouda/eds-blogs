@@ -64,9 +64,8 @@
       }
     }
   ],
-  "models": [
-    {
-      "id": "carousel",
+  "models": {
+    "carousel": {
       "fields": [
         {
           "component": "text",
@@ -85,8 +84,7 @@
         }
       ]
     },
-    {
-      "id": "carousel-item",
+    "carousel-item": {
       "fields": [
         {
           "component": "text",
@@ -120,7 +118,7 @@
         }
       ]
     }
-  ],
+  },
   "filters": [
     {
       "id": "carousel-filter",
