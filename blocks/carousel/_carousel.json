@@ -1,14 +1,12 @@
 {
   "definitions": [
     {
-      "id": "carousel",
       "title": "Carousel",
-      "category": "Layout",
+      "id": "carousel",
       "plugins": {
         "xwalk": {
           "page": {
             "resourceType": "core/franklin/components/block/v1/block",
-            "container": true,
             "template": {
               "name": "Carousel",
               "model": "carousel",
@@ -19,12 +17,12 @@
       }
     },
     {
-      "id": "carousel-item",
       "title": "Carousel Item",
+      "id": "carousel-item",
       "plugins": {
         "xwalk": {
           "page": {
-            "resourceType": "core/franklin/components/block/v1/block/item",
+            "resourceType": "core/franklin/components/block/v1/block",
             "template": {
               "name": "Carousel Item",
               "model": "carousel-item"
@@ -49,8 +47,14 @@
           "name": "style",
           "label": "Style Variant",
           "options": [
-            { "name": "Default", "value": "default" },
-            { "name": "Minimal", "value": "minimal" }
+            {
+              "name": "Default",
+              "value": "default"
+            },
+            {
+              "name": "Minimal",
+              "value": "minimal"
+            }
           ]
         }
       ]
