@@ -41,11 +41,10 @@
     ]
   },
   {
-    "carousel-filter": {
-      "components": [
-        "carousel-item"
-      ]
-    }
+    "id": "carousel-filter",
+    "components": [
+      "carousel-item"
+    ]
   },
   {
     "id": "columns",

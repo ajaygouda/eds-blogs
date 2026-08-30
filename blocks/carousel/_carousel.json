@@ -119,9 +119,10 @@
       ]
     }
   },
-  "filters": {
-    "carousel-filter": {
+  "filters": [
+    {
+      "id": "carousel-filter",
       "components": ["carousel-item"]
     }
-  }
+  ]
 }
