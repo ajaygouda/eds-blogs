@@ -12,52 +12,22 @@
             "template": {
               "name": "Carousel",
               "model": "carousel",
-              "filter": "carousel",
-              "definitions": [
-                {
-                  "id": "carousel-item",
-                  "title": "Carousel Item",
-                  "plugins": {
-                    "xwalk": {
-                      "page": {
-                        "template": {
-                          "name": "Carousel Item",
-                          "model": "carousel-item"
-                        }
-                      }
-                    }
-                  }
-                }
-              ],
-              "structure": {
-                "element": "div",
-                "classes": ["carousel"],
-                "children": [
-                  { "element": "h2", "binding": "title" },
-                  {
-                    "element": "div",
-                    "classes": ["carousel-items"],
-                    "repeat": "carousel-item",
-                    "children": [
-                      {
-                        "element": "div",
-                        "classes": ["carousel-slide"],
-                        "children": [
-                          { "element": "img", "binding": "image" },
-                          { "element": "h3", "binding": "title" },
-                          { "element": "p", "binding": "description" },
-                          {
-                            "element": "a",
-                            "classes": ["button"],
-                            "binding": "link",
-                            "textContent": "ctaText"
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ]
-              }
+              "filter": "carousel"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "carousel-item",
+      "title": "Carousel Item",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block/item",
+            "template": {
+              "name": "Carousel Item",
+              "model": "carousel-item"
             }
           }
         }
@@ -113,7 +83,7 @@
           "valueType": "string"
         },
         {
-          "component": "text",
+          "component": "aem-content",
           "name": "link",
           "label": "Button Link URL",
           "valueType": "string"
