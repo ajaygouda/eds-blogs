@@ -208,6 +208,9 @@
                     "children": [
                       {
                         "element": "h2",
+                        "classes": [
+                          "carousel-main-title"
+                        ],
                         "binding": "title"
                       },
                       {
@@ -249,11 +252,15 @@
                       }
                     ]
                   },
-                  "initial": [
-                    {
-                      "component": "carousel-item"
-                    }
-                  ]
+                  "initial": []
+                }
+              },
+              "pagebuilder": {
+                "icon": "images",
+                "template": {
+                  "name": "Carousel",
+                  "model": "carousel",
+                  "initial": []
                 }
               }
             }

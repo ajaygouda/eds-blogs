@@ -294,7 +294,7 @@
       {
         "component": "text",
         "name": "title",
-        "label": "Carousel Title",
+        "label": "Carousel Main Title",
         "valueType": "string"
       },
       {

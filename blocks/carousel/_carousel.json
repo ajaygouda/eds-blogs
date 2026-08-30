@@ -17,7 +17,11 @@
                 "element": "div",
                 "classes": ["carousel"],
                 "children": [
-                  { "element": "h2", "binding": "title" },
+                  {
+                    "element": "h2",
+                    "classes": ["carousel-main-title"],
+                    "binding": "title"
+                  },
                   {
                     "element": "div",
                     "classes": ["carousel-items"],
@@ -42,11 +46,15 @@
                   }
                 ]
               },
-              "initial": [
-                {
-                  "component": "carousel-item"
-                }
-              ]
+              "initial": []
+            }
+          },
+          "pagebuilder": {
+            "icon": "images",
+            "template": {
+              "name": "Carousel",
+              "model": "carousel",
+              "initial": []
             }
           }
         }
@@ -76,7 +84,7 @@
         {
           "component": "text",
           "name": "title",
-          "label": "Carousel Title",
+          "label": "Carousel Main Title",
           "valueType": "string"
         },
         {
