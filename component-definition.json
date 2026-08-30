@@ -188,24 +188,76 @@
           }
         },
         {
-          "title": "Carousel",
           "id": "carousel",
+          "title": "Carousel",
+          "category": "Layout",
           "plugins": {
             "xwalk": {
               "page": {
                 "resourceType": "core/franklin/components/block/v1/block",
+                "container": true,
                 "template": {
                   "name": "Carousel",
                   "model": "carousel",
-                  "filter": "carousel"
+                  "filter": "carousel-filter",
+                  "structure": {
+                    "element": "div",
+                    "classes": [
+                      "carousel"
+                    ],
+                    "children": [
+                      {
+                        "element": "h2",
+                        "binding": "title"
+                      },
+                      {
+                        "element": "div",
+                        "classes": [
+                          "carousel-items"
+                        ],
+                        "repeat": "carousel-item",
+                        "children": [
+                          {
+                            "element": "div",
+                            "classes": [
+                              "carousel-slide"
+                            ],
+                            "children": [
+                              {
+                                "element": "img",
+                                "binding": "image"
+                              },
+                              {
+                                "element": "h3",
+                                "binding": "title"
+                              },
+                              {
+                                "element": "p",
+                                "binding": "description"
+                              },
+                              {
+                                "element": "a",
+                                "classes": [
+                                  "button"
+                                ],
+                                "binding": "link",
+                                "textContent": "ctaText"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
                 }
               }
             }
           }
         },
         {
-          "title": "Carousel Item",
           "id": "carousel-item",
+          "title": "Carousel Item",
+          "category": "Layout",
           "plugins": {
             "xwalk": {
               "page": {
