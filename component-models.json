@@ -224,33 +224,11 @@
         "valueType": "string"
       },
       {
-        "component": "multiselect",
+        "component": "reference",
         "name": "category",
-        "value": "",
         "label": "Category",
-        "valueType": "string[]",
-        "options": [
-          {
-            "name": "Technology",
-            "value": "technology"
-          },
-          {
-            "name": "Bollywood",
-            "value": "bollywood"
-          },
-          {
-            "name": "Fashion & Beauty",
-            "value": "Fashion & Beauty"
-          },
-          {
-            "name": "Lifestyle",
-            "value": "lifestyle"
-          },
-          {
-            "name": "Trending",
-            "value": "trending"
-          }
-        ]
+        "valueType": "string",
+        "multi": false
       },
       {
         "component": "text",

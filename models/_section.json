@@ -54,7 +54,8 @@
         "columns",
         "fragment",
         "carousel",
-        "accordion"
+        "accordion",
+        "categories"
       ]
     }
   ]
