@@ -328,6 +328,23 @@
     ]
   },
   {
+    "id": "category",
+    "fields": [
+      {
+        "component": "text",
+        "name": "name",
+        "label": "Category Name",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "slug",
+        "label": "Slug",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
     "id": "columns",
     "fields": [
       {
