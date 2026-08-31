@@ -228,7 +228,8 @@
         "name": "category",
         "label": "Category",
         "valueType": "string",
-        "multi": false
+        "multi": false,
+        "filter": "categories"
       },
       {
         "component": "text",
