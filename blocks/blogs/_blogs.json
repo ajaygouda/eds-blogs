@@ -76,7 +76,9 @@
           "value": "",
           "label": "Category",
           "valueType": "string",
-          "source": "utils.getCategories"
+          "source": "utils.getCategories",
+          "fieldValueAttribute": "slug",
+          "fieldLabelAttribute": "name"
         },
         {
           "component": "text",
