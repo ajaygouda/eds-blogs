@@ -230,7 +230,7 @@
         "label": "Category",
         "valueType": "string",
         "source": "categories",
-        "fieldValueAttribute": "slug",
+        "fieldValueAttribute": "value",
         "fieldLabelAttribute": "name"
       },
       {

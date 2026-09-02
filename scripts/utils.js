@@ -48,17 +48,15 @@ export function parsePlainHtmlToJsonCategories(htmlText) {
   const parser = new DOMParser();
   const doc = parser.parseFromString(htmlText, 'text/html');
   const categoryRows = [...(doc.querySelector('.categories')?.children || [])];
-  console.log('categoryRows', categoryRows);
   if (categoryRows.length) {
     return categoryRows.map((row) => {
       const columns = [...row.children];
       return {
         name: columns[0]?.textContent?.trim() || '',
-        slug: columns[1]?.textContent?.trim() || '',
+        value: columns[1]?.textContent?.trim() || '',
       };
     });
   }
-
   return [];
 }
 

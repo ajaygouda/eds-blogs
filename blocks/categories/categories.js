@@ -1,16 +1,25 @@
 import { getCategories } from '../../scripts/utils.js';
 
 export default async function decorate(block) {
-  const categories = await getCategories(); // returns array of {name, value}
+  const categories = await getCategories(); // [{name, value}, ...]
+
+  // Clear existing authored content
+  block.innerHTML = '';
+
+  const options = [];
 
   categories.forEach((cat) => {
-    // Create a proper DOM node
     const el = document.createElement('p');
     el.className = 'blog__category';
-    el.textContent = cat.name; // show label
-    el.dataset.slug = cat.slug; // store slug for filtering
+    el.textContent = cat.name;
+    el.dataset.value = cat.value; // slug
+    el.dataset.name = cat.name; // name
+    block.appendChild(el);
 
-    // Append node safely
-    block.replaceChild(el, block.querySelector('div'));
+    // Push normalized object
+    options.push({ value: cat.value, name: cat.name });
   });
+
+  // Store normalized array for Blog JSON to consume
+  block.dataset.options = JSON.stringify(options);
 }
