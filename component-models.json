@@ -333,20 +333,14 @@
     "fields": [
       {
         "component": "text",
-        "name": "id",
-        "label": "Id",
+        "name": "title",
+        "label": "Title",
         "valueType": "string"
       },
       {
         "component": "text",
         "name": "slug",
         "label": "Slug",
-        "valueType": "string"
-      },
-      {
-        "component": "text",
-        "name": "title",
-        "label": "Title",
         "valueType": "string"
       }
     ]
