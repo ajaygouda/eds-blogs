@@ -76,7 +76,7 @@
           "value": "",
           "label": "Category",
           "valueType": "string",
-          "source": "utils/getCategories.js",
+          "source": "categories",
           "fieldValueAttribute": "slug",
           "fieldLabelAttribute": "name"
         },
