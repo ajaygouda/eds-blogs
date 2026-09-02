@@ -39,7 +39,7 @@
         {
           "component": "text",
           "name": "name",
-          "label": "Category Name",
+          "label": "Name",
           "valueType": "string"
         },
         {

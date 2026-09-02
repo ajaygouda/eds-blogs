@@ -224,12 +224,12 @@
         "valueType": "string"
       },
       {
-        "component": "reference",
+        "component": "select",
         "name": "category",
+        "value": "",
         "label": "Category",
         "valueType": "string",
-        "multi": false,
-        "filter": "categories"
+        "source": "utils.getCategories"
       },
       {
         "component": "text",
@@ -334,7 +334,7 @@
       {
         "component": "text",
         "name": "name",
-        "label": "Category Name",
+        "label": "Name",
         "valueType": "string"
       },
       {

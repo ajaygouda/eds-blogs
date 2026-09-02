@@ -1,8 +1,12 @@
-import { formatDate, extractWraperDiv, getBlogsData } from '../../scripts/utils.js';
+import {
+  formatDate, extractWraperDiv, getBlogsData, getCategories,
+} from '../../scripts/utils.js';
 
 export default async function decorate(block) {
   const blogsList = [...block.children];
   const blogsData = await getBlogsData() || [];
+  const categoriesData = await getCategories() || [];
+  console.log('categoriesData', categoriesData);
   blogsList.forEach((blog, index) => {
     const cols = [...blog.children];
     const data = blogsData[index];

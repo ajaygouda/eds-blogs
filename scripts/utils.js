@@ -44,6 +44,24 @@ export function parsePlainHtmlToJson(htmlText) {
   return [];
 }
 
+export function parsePlainHtmlToJsonCategories(htmlText) {
+  const parser = new DOMParser();
+  const doc = parser.parseFromString(htmlText, 'text/html');
+  const categoryRows = [...(doc.querySelector('.categories')?.children || [])];
+  console.log('categoryRows', categoryRows);
+  if (categoryRows.length) {
+    return categoryRows.map((row) => {
+      const columns = [...row.children];
+      return {
+        name: columns[0]?.textContent?.trim() || '',
+        slug: columns[1]?.textContent?.trim() || '',
+      };
+    });
+  }
+
+  return [];
+}
+
 export function setSession(key, value) {
   sessionStorage.setItem(key, JSON.stringify(value));
 }
@@ -55,4 +73,15 @@ export async function getBlogsData() {
   const html = await response.text();
   const blogs = parsePlainHtmlToJson(html);
   return blogs;
+}
+
+export async function getCategories() {
+  if (window.categoriesData) return window.categoriesData;
+
+  const response = await fetch('/master.plain.html');
+  const html = await response.text();
+  console.log('html', html);
+  const categories = parsePlainHtmlToJsonCategories(html);
+  console.log('categories', categories);
+  return categories;
 }
