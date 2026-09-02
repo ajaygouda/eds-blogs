@@ -334,19 +334,19 @@
       {
         "component": "text",
         "name": "id",
-        "label": "ID",
-        "valueType": "string"
-      },
-      {
-        "component": "text",
-        "name": "name",
-        "label": "Name",
+        "label": "Id",
         "valueType": "string"
       },
       {
         "component": "text",
         "name": "slug",
         "label": "Slug",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "name",
+        "label": "Name",
         "valueType": "string"
       }
     ]
