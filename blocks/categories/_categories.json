@@ -38,6 +38,12 @@
       "fields": [
         {
           "component": "text",
+          "name": "name",
+          "label": "Name",
+          "valueType": "string"
+        },
+        {
+          "component": "text",
           "name": "title",
           "label": "Title",
           "valueType": "string"
