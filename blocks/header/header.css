@@ -278,6 +278,10 @@ header nav .nav-sections ul > li > ul > li {
         margin: 0;
     }
 
+    header nav .nav-sections .default-content-wrapper {
+        flex-direction: row-reverse;
+    }
+
     header nav .nav-sections .default-content-wrapper > ul > li {
         flex: 0 1 auto;
         position: relative;

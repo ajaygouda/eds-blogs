@@ -81,6 +81,5 @@ export async function getCategories() {
   const response = await fetch('/master.plain.html');
   const html = await response.text();
   const categories = parsePlainHtmlToJsonCategories(html);
-  console.log('getCategories', categories);
   return categories;
 }

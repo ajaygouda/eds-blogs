@@ -1,6 +1,6 @@
 import { getMetadata } from '../../scripts/aem.js';
 import { loadFragment } from '../fragment/fragment.js';
-import { getBlogsData } from '../../scripts/utils.js';
+import { getBlogsData, getCategories } from '../../scripts/utils.js';
 
 // media query match that indicates mobile/tablet width
 const isDesktop = window.matchMedia('(min-width: 900px)');
@@ -139,24 +139,52 @@ export default async function decorate(block) {
     brandLink.closest('.button-container').className = '';
   }
 
+  const navData = await getCategories() || [];
   const navSections = nav.querySelector('.nav-sections');
+  console.log('navSections', navSections);
+
   if (navSections) {
-    navSections.querySelectorAll(':scope .default-content-wrapper > ul > li').forEach((navSection) => {
-      const navLink = navSection.querySelector(':scope > a');
-      if (navLink) {
-        const currentPath = window.location.pathname.replace(/\/$/, '') || '/';
-        const linkPath = new URL(navLink.href, window.location).pathname.replace(/\/$/, '') || '/';
-        if (currentPath === linkPath) navSection.classList.add('active');
+    // Clear existing nav items
+    const defaultWrapper = navSections.querySelector('.default-content-wrapper');
+    if (defaultWrapper) {
+      const mainUl = defaultWrapper.querySelector('ul');
+      if (mainUl) {
+        mainUl.replaceChildren(); // Clear all existing LI items
       }
-      if (navSection.querySelector('ul')) navSection.classList.add('nav-drop');
-      navSection.addEventListener('click', () => {
-        if (isDesktop.matches) {
-          const expanded = navSection.getAttribute('aria-expanded') === 'true';
-          toggleAllNavSections(navSections);
-          navSection.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+    }
+
+    // Build new list from categories data
+    if (navData.length > 0) {
+      if (defaultWrapper) {
+        let mainUl = defaultWrapper.querySelector('ul');
+        if (!mainUl) {
+          mainUl = document.createElement('ul');
+          defaultWrapper.appendChild(mainUl);
         }
-      });
-    });
+
+        navData.forEach((category) => {
+          const li = document.createElement('li');
+          const a = document.createElement('a');
+          a.href = `/blogs?category=${category.slug}`;
+          a.textContent = category.name;
+          li.appendChild(a);
+          mainUl.appendChild(li);
+
+          // Add active class logic based on category query parameter
+          const currentUrl = new URL(window.location);
+          const currentCategory = currentUrl.searchParams.get('category');
+          if (currentCategory === category.slug) li.classList.add('active');
+
+          li.addEventListener('click', () => {
+            if (isDesktop.matches) {
+              const expanded = li.getAttribute('aria-expanded') === 'true';
+              toggleAllNavSections(navSections);
+              li.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+            }
+          });
+        });
+      }
+    }
   }
 
   const iconSearch = nav.querySelector('.icon-search');
