@@ -345,8 +345,8 @@
       },
       {
         "component": "text",
-        "name": "name",
-        "label": "Name",
+        "name": "title",
+        "label": "Title",
         "valueType": "string"
       }
     ]
