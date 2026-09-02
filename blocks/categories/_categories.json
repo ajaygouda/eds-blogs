@@ -25,7 +25,7 @@
             "template": {
               "name": "Category",
               "model": "category",
-              "fields": ["name", "slug"]
+              "fields": ["id", "name", "slug"]
             }
           }
         }
@@ -36,6 +36,12 @@
     {
       "id": "category",
       "fields": [
+        {
+          "component": "text",
+          "name": "id",
+          "label": "ID",
+          "valueType": "string"
+        },
         {
           "component": "text",
           "name": "name",

@@ -308,6 +308,7 @@
                   "name": "Category",
                   "model": "category",
                   "fields": [
+                    "id",
                     "name",
                     "slug"
                   ]

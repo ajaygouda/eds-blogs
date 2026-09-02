@@ -53,8 +53,9 @@ export function parsePlainHtmlToJsonCategories(htmlText) {
     return categoryRows.map((row) => {
       const columns = [...row.children];
       return {
-        name: columns[0]?.textContent?.trim() || '',
-        value: columns[0]?.textContent?.trim() || '',
+        id: columns[0]?.textContent?.trim() || '',
+        name: columns[1]?.textContent?.trim() || '',
+        slug: columns[2]?.textContent?.trim() || '',
       };
     });
   }
@@ -80,8 +81,7 @@ export async function getCategories() {
 
   const response = await fetch('/master.plain.html');
   const html = await response.text();
-  console.log('html', html);
   const categories = parsePlainHtmlToJsonCategories(html);
-  console.log('categories', categories);
+  console.log('getCategories', categories);
   return categories;
 }
