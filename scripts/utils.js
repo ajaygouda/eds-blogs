@@ -54,7 +54,7 @@ export function parsePlainHtmlToJsonCategories(htmlText) {
       const columns = [...row.children];
       return {
         name: columns[0]?.textContent?.trim() || '',
-        slug: columns[1]?.textContent?.trim() || '',
+        value: columns[0]?.textContent?.trim() || '',
       };
     });
   }
