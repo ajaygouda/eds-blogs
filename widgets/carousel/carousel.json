@@ -1,0 +1,11 @@
+{
+  "id": "carousel",
+  "component": "widget",
+  "label": "Carousel",
+  "model": "carousel-item",
+  "fields": ["title", "image", "ctaText", "styleVariant", "autoplay"],
+  "render": {
+    "type": "carousel",
+    "options": "@carousel-items"
+  }
+}

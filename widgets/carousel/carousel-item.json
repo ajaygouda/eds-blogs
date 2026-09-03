@@ -1,0 +1,30 @@
+{
+  "id": "carousel-item",
+  "fields": [
+    {
+      "component": "text",
+      "name": "title",
+      "label": "Slide Title",
+      "valueType": "string"
+    },
+    {
+      "component": "reference",
+      "name": "image",
+      "label": "Slide Image",
+      "valueType": "string"
+    },
+    {
+      "component": "text",
+      "name": "ctaText",
+      "label": "CTA Button",
+      "valueType": "string"
+    },
+    {
+      "component": "select",
+      "name": "styleVariant",
+      "label": "Style Variant",
+      "options": ["hero", "minimal", "fullwidth"]
+    },
+    { "component": "boolean", "name": "autoplay", "label": "Enable Autoplay" }
+  ]
+}

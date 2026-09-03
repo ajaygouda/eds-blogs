@@ -1,0 +1,30 @@
+/* Base carousel styles */
+.carousel {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+}
+.carousel .slide {
+    flex: 0 0 100%;
+    transition: transform 0.5s ease;
+}
+
+/* Hero variant */
+.carousel-hero .slide {
+    height: 500px;
+    background-size: cover;
+    color: white;
+}
+
+/* Minimal variant */
+.carousel-minimal .slide {
+    height: 300px;
+    border: 1px solid #ccc;
+    background: #f9f9f9;
+}
+
+/* Fullwidth variant */
+.carousel-fullwidth .slide {
+    width: 100vw;
+    height: 600px;
+}
