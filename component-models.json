@@ -224,16 +224,6 @@
         "valueType": "string"
       },
       {
-        "component": "select",
-        "name": "category",
-        "value": "",
-        "label": "Category",
-        "valueType": "string",
-        "source": "categories",
-        "fieldValueAttribute": "value",
-        "fieldLabelAttribute": "name"
-      },
-      {
         "component": "text",
         "name": "tags",
         "value": "",
